@@ -10,5 +10,3 @@ export class TweetRepository {
         }
     }
 }
-
-module.exports = TweetRepository;
