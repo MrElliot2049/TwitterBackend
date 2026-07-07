@@ -5,13 +5,7 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         required: true,
         max: [250, 'Too long tweet']
-    },
-    hashtags : [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref : 'Hashtag'
-        }
-    ]
+    }
 }, {timestamps: true});
 
 const Tweet = mongoose.model('Tweet',tweetSchema);
