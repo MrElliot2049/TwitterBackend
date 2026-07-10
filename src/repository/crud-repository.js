@@ -1,4 +1,4 @@
-class CrudRepository {
+export class CrudRepository {
     constructor(model) {
         this.model = model;
     }
@@ -52,5 +52,3 @@ class CrudRepository {
         }
     }
 }
-
-export default CrudRepository;
