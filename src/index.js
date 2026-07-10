@@ -12,10 +12,6 @@ const startServer = async () => {
     await connect();
     app.listen(PORT, async () => {
         console.log(`Server started listening on Port ${PORT}`);
-        let repo = new TweetService();
-        await repo.create({
-            content : "#NEY have #WON"
-        });
     })
 }
 
