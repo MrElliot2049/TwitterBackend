@@ -12,7 +12,14 @@ export class TweetRepository extends CrudRepository {
             console.log(error);
         }
     }
-
+    async getWithComments(id) {
+        try {
+            const res = await Tweet.findById(id).populate({path : 'comments'}).lean();
+            return res;
+        } catch (error) {
+            throw error;
+        }
+    }
     async find(id) {
         try {
             const res = await Tweet.findById(id).populate({path: 'likes'});

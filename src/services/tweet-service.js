@@ -29,4 +29,13 @@ export class TweetService {
             throw error;
         }
     }
+    async getTweet(tweetId) {
+        try {
+            const response = await this.tweetRepository.getWithComments(tweetId);
+            return response;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }
