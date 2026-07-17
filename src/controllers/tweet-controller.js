@@ -1,5 +1,4 @@
 import { TweetService } from "../services/tweet-service.js";
-
 const tweetService = new TweetService();
 export const createTweet = async (req, res) => {
     try {

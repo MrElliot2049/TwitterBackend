@@ -24,3 +24,23 @@ export const signUp = async (req, res) => {
         });
     }
 }
+
+export const login = async (req, res) => {
+    try {
+        const token = await userService.signIn({email: req.body.email, password: req.body.password});
+        return res.status(201).json({
+            message: 'successfully logged in',
+            success: true,
+            data: token,
+            err: {}
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: 'login failed',
+            err: error,
+            data: {}
+        });
+    }
+}
